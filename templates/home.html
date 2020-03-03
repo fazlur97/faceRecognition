@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" /> -->
+  <link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+  <script type="text/javascript">
+    function validateForm() {
+      var x = document.forms["pilihvideo"]["isi"].value;
+      if ( x == null || x == "" || x=="Pilih Video") {
+        alert("Pilih Video");
+        return false;
+    }
+  }
+  </script>
+</head>
+
+<body>
+  
+<!--   {% block content %}
+  <div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+      {{message}}
+    </div>
+    {% endfor %}
+  </div>
+  {% endblock %}
+ -->
+  <div class="header">
+    <h1>Aplikasi Pengenalan Wajah</h1>
+    <p>Otentikasi</p>
+  </div>
+
+  <ul>
+    <li><a class="active" href="{{url_for('home')}}">Home</a></li>
+    <li><a href="{{url_for('absensi')}}">Laporan</a></li>
+  </ul>
+
+  </div>
+  <img width="50%" src="{{ url_for('calc') }}" style="display: block;margin-left: auto;margin-right: auto;padding:20px"/>
+
+  <form id="pilih_video" action="{{url_for('gantiVideo')}}" method="POST" name="pilihvideo" onsubmit="return validateForm()">
+  <div align="center" style="margin: 20px;">
+  <div class="select">
+    <select name="isi" id="slct" align="center">
+      <option selected disabled>Pilih Video</option>
+      {% for video in vid %}
+        <option value={{video}}>{{video}}</option>
+      {%endfor%}
+<!--       <option value="0">Video 1</option>
+      <option value="1">Video 2</option>
+      <option value="2">Video 3</option> -->
+      <option value="webcam">WebCam</option>
+    </select>
+  </div>
+  <input type="submit" value="Go">
+  </div>
+</form>
+
+
+</body>
+</html>

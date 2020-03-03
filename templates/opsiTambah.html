@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" /> -->
+<link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Aplikasi Pengenalan Wajah</h1>
+    <p>Registrasi</p>
+  </div>
+
+  <ul>
+    <li><a href="{{url_for('home')}}">Tambah Data Wajah</a></li>
+    <li><a href="{{url_for('train')}}">Train Data</a></li>
+  </ul>
+
+  <div width="100%" style="margin:20px">
+    <table>
+      <tr>
+        <td colspan="2">
+          <div style="padding: 5px;text-align: center;vertical-align:middle;background-color: #4CAF50;">
+        <h2>Pilih metode penambahan data</h2>
+        </div>
+      </td>
+      </tr>
+      <tr>
+      <td>
+        <a href="{{url_for('tambahUpload')}}">
+          <div class="pilihan">
+            <image src="static/file-upload.png" width="30%" height="30%"></image>
+            <h2>Upload Gambar Wajah</h2>
+            <p>Tambah gambar dari local file</p>
+          </div>
+        </a>
+      </td>
+      <td>
+        <a href="{{url_for('tambahKamera')}}">
+          <div class="pilihan">
+            <image src="static/camera.png" width="30%" height="30%"></image>
+            <h2>Kamera</h2>
+            <p>Tambah gambar menggunakan kamera</p>
+          </div>
+        </a>
+      </td>
+      </tr>
+    </table>
+  </div>
+</body>

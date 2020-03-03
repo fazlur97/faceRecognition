@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+  <script type="text/javascript">
+    function validateForm() {
+      var x = document.forms["pilihvideo"]["isi"].value;
+      if ( x == null || x == "" || x=="Pilih Video") {
+        alert("Pilih Video");
+        return false;
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Aplikasi Pengenalan Wajah</h1>
+    <p>Registrasi</p>
+  </div>
+
+  <ul>
+    <li><a href="{{url_for('home')}}">Tambah Data Wajah</a></li>
+    <li><a href="{{url_for('train')}}">Train Data</a></li>
+  </ul>
+
+  <img width="50%" src="{{ url_for('calc2') }}" style="display: block;margin-left: auto;margin-right: auto;padding:20px"/>
+
+  <div align="center">
+  <form id="mulaiCapture" action="{{url_for('mulaiCapture')}}">
+  <input type="submit" name="Capture" value='Capture!'></form>
+</div>
+</body>
+</html>

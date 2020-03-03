@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" /> -->
+    <link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="header">Laporan pada bulan {{ bulan }}</div>
+    <table>
+        <tr style="background-color: #4CAF50;color: white">
+            <th class="tableRapih">Nama</th>
+            <th class="tableRapih">Jam Masuk</th>
+        </tr>
+        {%for x in range(0,dataCount) %}
+        <tr>
+            <th class="tableRapih">{{ ids[x] }}</th>
+            <th class="tableRapih">{{ dates[x] }}</th>
+            <th class="tableRapih">{{ times[x] }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+</html>

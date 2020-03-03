@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" /> -->
+<link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Aplikasi Pengenalan Wajah</h1>
+    <p>Otentikasi</p>
+  </div>
+
+  <ul>
+    <li><a class="active" href="{{url_for('home')}}">Home</a></li>
+    <li><a href="{{url_for('absensi')}}">Laporan</a></li>
+  </ul>
+
+  </div>
+  <a href="{{url_for('home')}}">
+  <img width="50%" src="/static/play-button.jpeg" style="display: block;margin-left: auto;margin-right: auto;"/>
+  </a>
+  <form id="pilih_video" action="{{url_for('gantiVideo')}}" method="POST">
+</form>
+
+
+</body>
+</html>

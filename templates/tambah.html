@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" /> -->
+<link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+  
+
+  <script type="text/javascript">
+    function validateForm() {
+      var x = document.forms["tambahOrang"]["nama"].value;
+      var y = document.forms["tambahOrang"]["file"].value;
+      if ( x == null || x == "") {
+        alert("Mohon isi nama");
+        return false;
+      }
+      if( y == null || y == ""){
+        alert("Mohon upload file foto")
+        return false;
+      }
+      document.getElementById("overlay").style.display = "block";
+  }
+  </script>
+  <style>
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+  }
+
+#textoverlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+
+  </style>
+</head>
+
+<body>
+  <div id="overlay">
+    <div id="textoverlay"><img src="static/progress-face.gif" height="300px" width="300px"></div>
+  </div>
+
+  <div class="header">
+    <h1>Aplikasi Pengenalan Wajah</h1>
+    <p>Registrasi</p>
+  </div>
+
+  <ul>
+    <li><a href="{{url_for('home')}}">Tambah Data Wajah</a></li>
+    <li><a href="{{url_for('train')}}">Train Data</a></li>
+  </ul>
+
+  <div style= "border-radius: 5px;background-color: #f2f2f2;padding: 100px;margin: 20px">
+    <form id="upload-form" action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data" name="tambahOrang" onsubmit="return validateForm()">
+        <label for="fname">First name:</label>
+        <input type="text" name="nama" id="fname" placeholder="Your Name..">
+        <input type="file" name="file" accept="image/*" multiple="">
+        <input type="submit" value="send">
+    </form>
+  </div>
+</body>

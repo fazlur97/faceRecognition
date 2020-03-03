@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" /> -->
+    <link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Aplikasi Pengenalan Wajah</h1>
+        <p>Otentikasi</p>
+    </div>
+    
+    <ul>
+        <li><a class="active" href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('absensi')}}">Laporan</a></li>
+    </ul>
+    
+    <div style="margin:20px;">
+    <h1>Laporan</h1>
+    <a href="{{url_for('get_csv')}}"><p>Download Laporan</p></a>
+    <table>
+        <tr style="background-color: #4CAF50;color: white">
+            <th class="tableRapih">Nama</th>
+            <th class="tableRapih">Tanggal</th>
+            <th class="tableRapih">Jam Masuk</th>
+        </tr>
+        {%for x in range(0,dataCount) %}
+        <tr>
+            <th class="tableRapih">{{ ids[x] }}</th>
+            <th class="tableRapih">{{ dates[x] }}</th>
+            <th class="tableRapih">{{ times[x] }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+</html>
