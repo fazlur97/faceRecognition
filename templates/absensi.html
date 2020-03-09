@@ -9,8 +9,8 @@
 
 <body>
     <div class="header">
-        <h1>Aplikasi Pengenalan Wajah</h1>
-        <p>Otentikasi</p>
+        <h1>Face Recognition Application</h1>
+        <p>Authentication</p>
     </div>
     
     <ul>
@@ -19,13 +19,13 @@
     </ul>
     
     <div style="margin:20px;">
-    <h1>Laporan</h1>
-    <a href="{{url_for('get_csv')}}"><p>Download Laporan</p></a>
+    <h1>Report</h1>
+    <a href="{{url_for('get_csv')}}"><p>Download Report</p></a>
     <table>
         <tr style="background-color: #4CAF50;color: white">
-            <th class="tableRapih">Nama</th>
-            <th class="tableRapih">Tanggal</th>
-            <th class="tableRapih">Jam Masuk</th>
+            <th class="tableRapih">Name</th>
+            <th class="tableRapih">Date</th>
+            <th class="tableRapih">Hour</th>
         </tr>
         {%for x in range(0,dataCount) %}
         <tr>

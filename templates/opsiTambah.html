@@ -11,12 +11,12 @@
 <body>
 
   <div class="header">
-    <h1>Aplikasi Pengenalan Wajah</h1>
-    <p>Registrasi</p>
+    <h1>Face Recognition Application</h1>
+    <p>Registration</p>
   </div>
 
   <ul>
-    <li><a href="{{url_for('home')}}">Tambah Data Wajah</a></li>
+    <li><a href="{{url_for('home')}}">Add Face</a></li>
     <li><a href="{{url_for('train')}}">Train Data</a></li>
   </ul>
 
@@ -25,7 +25,7 @@
       <tr>
         <td colspan="2">
           <div style="padding: 5px;text-align: center;vertical-align:middle;background-color: #4CAF50;">
-        <h2>Pilih metode penambahan data</h2>
+        <h2>Choose Method to Add Data</h2>
         </div>
       </td>
       </tr>
@@ -34,8 +34,8 @@
         <a href="{{url_for('tambahUpload')}}">
           <div class="pilihan">
             <image src="static/file-upload.png" width="30%" height="30%"></image>
-            <h2>Upload Gambar Wajah</h2>
-            <p>Tambah gambar dari local file</p>
+            <h2>Upload Face Photo</h2>
+            <p>Add Photo from your local file</p>
           </div>
         </a>
       </td>
@@ -43,8 +43,8 @@
         <a href="{{url_for('tambahKamera')}}">
           <div class="pilihan">
             <image src="static/camera.png" width="30%" height="30%"></image>
-            <h2>Kamera</h2>
-            <p>Tambah gambar menggunakan kamera</p>
+            <h2>Camera</h2>
+            <p>Add Photo using your camera</p>
           </div>
         </a>
       </td>

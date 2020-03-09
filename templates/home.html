@@ -30,13 +30,13 @@
   {% endblock %}
  -->
   <div class="header">
-    <h1>Aplikasi Pengenalan Wajah</h1>
-    <p>Otentikasi</p>
+    <h1>Face Recognition Application</h1>
+    <p>Authentication</p>
   </div>
 
   <ul>
     <li><a class="active" href="{{url_for('home')}}">Home</a></li>
-    <li><a href="{{url_for('absensi')}}">Laporan</a></li>
+    <li><a href="{{url_for('absensi')}}">Report</a></li>
   </ul>
 
   </div>
@@ -46,7 +46,7 @@
   <div align="center" style="margin: 20px;">
   <div class="select">
     <select name="isi" id="slct" align="center">
-      <option selected disabled>Pilih Video</option>
+      <option selected disabled>Choose Video</option>
       {% for video in vid %}
         <option value={{video}}>{{video}}</option>
       {%endfor%}
